@@ -27,11 +27,17 @@ def the_winner(user_choice, computer_choice): #win lose conditions
 
 
 def play():
-    user_choice = get_player_move()
-    computer_choice = get_computer_move()
-    print(f"\nYou chose: {user_choice}, The computer chose: {computer_choice}")
-    result = the_winner(user_choice, computer_choice)
-    print(result)
+    while True:
+        user_choice = get_player_move()
+        computer_choice = get_computer_move()
+        print(f"\nYou chose: {user_choice}, The computer chose: {computer_choice}")
+        result = the_winner(user_choice, computer_choice)
+        print(result)
+
+        #play again?
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        if play_again != "yes":
+            break
 
 if __name__ == "__main__":
     play()
